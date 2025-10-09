@@ -20,7 +20,7 @@ El estudiante practicará los fundamentos de videojuegos en 3D con Unity.
 ### **Paso 2: Desarrollo de Lecciones**
 | Lección | Estado | Descripción | Ubicación en Repositorio |
 |---------|--------|-------------|--------------------------|
-| **Lección 1** | Completado | El Control del Jugador | `https://github.com/Karime-Caballero/SemillasDelMa-ana-Videojuego/commit/8f098b477ede9185b768b99326d49f4f4e1b4b3d` |
+| **Lección 1** | Completado | El Control del Jugador | `SemillasDelMa-ana-Videojuego/` |
 | **Lección 2** | Pendiente | Jugabilidad Básica | `/Unidad-1/Leccion-2/` |
 | **Lección 3** | Pendiente | Sonidos y Efectos | `/Unidad-2/Leccion-3/` |
 | **Lección 5** | Pendiente | Interfaz de Usuario | `/Unidad-2/Leccion-5/` |
