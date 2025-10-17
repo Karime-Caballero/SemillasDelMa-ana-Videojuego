@@ -25,7 +25,7 @@ El estudiante practicará los fundamentos de videojuegos en 3D con Unity.
 | Lección | Estado | Descripción | Ubicación en Repositorio | Fecha de entrega |
 |---------|--------|-------------|--------------------------|------------------|
 | **Lección 1** | Completado | El Control del Jugador |  [ `tutoriales/Leccion-1-Control-Jugador/`](tutoriales/Leccion-1-Control-Jugador/) | 10/10/2025 10:39|
-| **Lección 2** | Pendiente | Jugabilidad Básica | [⚡ `Leccion-1-2-Del-pedal-al-metal.md`](tutoriales/Leccion-1-Control-Jugador/Leccion-1-2-Del-pedal-al-metal.md) |
+| **Lección 2** | Pendiente | Jugabilidad Básica |[ `tutoriales/Leccion-1-2-Del-pedal-al-metal.md`](tutoriales/Leccion-1-2-Del-pedal-al-metal.md) |
 | **Lección 3** | Pendiente | Sonidos y Efectos | `/Unidad-2/Leccion-3/` |
 | **Lección 5** | Pendiente | Interfaz de Usuario | `/Unidad-2/Leccion-5/` |
 
