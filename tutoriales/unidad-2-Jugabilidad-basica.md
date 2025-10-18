@@ -145,4 +145,108 @@
 
 
 # Lección 2.3: Estampida de animales aleatorios
+##  SECCIONES DE LA LECCIÓN
+
+#### **1. Crea un gestor de generación**
+1. En Hierarchy: crear Empty Object llamado "SpawnManager"
+2. Crear script "SpawnManager" y adjuntarlo al objeto
+3. Definir `public GameObject[] animalPrefabs;`
+4. En Inspector: cambiar tamaño del array según cantidad de animales
+5. Arrastrar prefabs de animales desde Project (no Hierarchy) a los espacios del array
+
+<img width="1722" height="931" alt="image" src="https://github.com/user-attachments/assets/40373fef-4fa3-4316-83ea-52947ff7cdd3" />
+<img width="1916" height="1027" alt="image" src="https://github.com/user-attachments/assets/4f75013f-05c1-4f7f-bba7-1d79cbaaedef" />
+
+
+#### **2. Genera un animal cuando se pulsa la tecla S**
+1. En Update(): crear condicional `if (Input.GetKeyDown(KeyCode.S))`
+2. Definir `public int animalIndex;`
+3. Usar `Instantiate()` con animalPrefabs[animalIndex]
+4. Probar editando animalIndex en Inspector
+<img width="1919" height="1040" alt="image" src="https://github.com/user-attachments/assets/95cb7c34-18be-48bc-bf8a-3f1b4976cbff" />
+<img width="1735" height="919" alt="image" src="https://github.com/user-attachments/assets/36bca482-2adf-46fc-8ef9-1747674236f2" />
+
+#### **3. Generar animales aleatorios desde el arreglo**
+1. En condicional de tecla S: generar índice aleatorio
+2. `int animalIndex = Random.Range(0, animalPrefabs.Length);`
+3. Eliminar variable global animalIndex (usar solo localmente)
+4. Probar generación aleatoria
+
+   <img width="1919" height="1023" alt="image" src="https://github.com/user-attachments/assets/e368c71d-8332-4023-a6d2-7cb6722c4923" />
+   <img width="1717" height="921" alt="image" src="https://github.com/user-attachments/assets/200bad87-5042-40ad-a059-2dcb233f223f" />
+
+
+#### **4. Establece al azar la ubicación de la generación**
+1. Reemplazar posición X fija por `Random.Range(-20, 20)`
+2. Crear variable local `Vector3 spawnPos`
+3. En parte superior de clase: crear `private float spawnRangeX` y `spawnPosZ`
+4. Usar variables para definir rango de spawn
+<img width="1716" height="899" alt="image" src="https://github.com/user-attachments/assets/6380d89d-7eee-4a85-9eb8-369b1df5584c" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/eeb1dae5-fd1a-4e21-82da-ba3250bbea12" />
+
+
+#### **5. Cambia la perspectiva de la cámara**
+1. En Scene View: alternar entre Perspective e Isometric
+2. Seleccionar cámara principal
+3. En componente Camera: cambiar Projection de "Perspective" a "Orthographic"
+4. Ajustar tamaño de cámara orthographic según necesidad
+<img width="1919" height="1019" alt="image" src="https://github.com/user-attachments/assets/0376df67-540a-4c07-9a83-5ae15d781c6e" />
+
+# Lección 2.4: Decisiones de colisiones
+##  SECCIONES DE LA LECCIÓN
+
+#### **1. Haz un nuevo método para generar animales**
+1. En SpawnManager.cs: crear función `void SpawnRandomAnimal() {}` debajo de Update()
+2. Cortar y pegar código del condicional de tecla S a la nueva función
+3. Llamar `SpawnRandomAnimal();` cuando se presione tecla S
+
+   
+<img width="1716" height="945" alt="Captura de pantalla 2025-10-18 002401" src="https://github.com/user-attachments/assets/87333b2f-6ddd-4a15-a3f3-83e4bb24ba75" />
+
+#### **2. Genera animales en intervalos de tiempo**
+1. En Start(): usar `InvokeRepeating()` para generar animales automáticamente
+2. Eliminar condicional de tecla S
+3. Definir `private float startDelay` y `spawnInterval`
+4. Probar y ajustar valores de las variables
+
+   <img width="1715" height="925" alt="image" src="https://github.com/user-attachments/assets/07c90859-5d39-49ac-a8fd-4731aefcf17e" />
+
+
+#### **3. Agrega un componente Collider y Trigger**
+1. Abrir prefab de animal: `Add Component > Box Collider`
+2. Hacer clic en "Edit Collider" y ajustar manillas para abarcar el objeto
+3. Marcar casilla "Is Trigger"
+4. Repetir proceso en todos los animales y el proyectil
+5. Agregar `RigidBody` al proyectil y desmarcar "Use Gravity"
+
+   <img width="1915" height="1074" alt="image" src="https://github.com/user-attachments/assets/a6aeb4cf-3938-44f8-ad8c-815df0447dcd" />
+
+
+#### **4. Destruye objetos al colisionar**
+1. Crear script "DetectCollisions.cs"
+2. Agregar script a cada animal prefab
+3. En script: agregar función `OnTriggerEnter()` usando autocomplete
+4. Dentro de función: `Destroy(gameObject);` y `Destroy(other.gameObject);`
+5. Probar colisiones
+
+   <img width="1716" height="918" alt="image" src="https://github.com/user-attachments/assets/43645063-c769-4440-b5eb-a94efbd9ccb2" />
+   <img width="1916" height="1023" alt="image" src="https://github.com/user-attachments/assets/307d434d-530a-43d0-b821-60289e05c0a1" />
+
+
+
+#### **5. Desencadena un mensaje de «Game Over»**
+1. En DestroyOutOfBounds.cs: en condicional de límite inferior
+2. Agregar: `Debug.Log("Game Over!");`
+3. Limpiar código con comentarios
+4. Usar formato de documento en Visual Studio para corrección de sangría
+
+   <img width="1710" height="920" alt="image" src="https://github.com/user-attachments/assets/6cb08fc6-7e14-45f5-993c-c5fab85e52fc" />
+   <img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/c3c89bd8-a979-4a52-9b8c-7eec694a3237" />
+   <img width="1919" height="1017" alt="image" src="https://github.com/user-attachments/assets/54a21954-1826-49fc-8627-68245db9e60c" />
+
+#VIDEO DE EVIDENCIA
+
+https://github.com/user-attachments/assets/b202289f-2fc7-45ab-836d-54ba2756ccca
+
+
 
