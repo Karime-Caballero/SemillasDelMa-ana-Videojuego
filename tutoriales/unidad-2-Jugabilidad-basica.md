@@ -139,4 +139,10 @@
 1. Crear condicional `else if` para verificar `lowerBound`
 2. Aplicar script a todos los animales
 3. Usar "Override" en los Prefabs de animales
+<img width="1919" height="1041" alt="image" src="https://github.com/user-attachments/assets/43cb9d40-e787-409d-996e-35f615b719e5" />
+<img width="1734" height="925" alt="image" src="https://github.com/user-attachments/assets/23af1894-f05c-434d-9470-656b1ff21be0" />
+
+
+
+# Lección 2.3: Estampida de animales aleatorios
 
