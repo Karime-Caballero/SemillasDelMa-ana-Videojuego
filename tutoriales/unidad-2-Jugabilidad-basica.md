@@ -1,5 +1,6 @@
 
 # UNIDAD 2: JUGABILIDAD BÁSICA
+# Lección 2.1: Posición del jugador
 
 ##  INFORMACIÓN GENERAL
 - **Ubicación:** `tutoriales/unidad-2-Jugabilidad-basica.md`
@@ -47,9 +48,6 @@
 <img width="1729" height="926" alt="image" src="https://github.com/user-attachments/assets/d2ae9a52-dd59-461b-a645-801d7f7bef66" />
 
 
-
-
-
 #### **5. ¿Cómo mantener al jugador dentro de los límites?**
 1. En Update(): escribir condicional para verificar posición X izquierda
 2. Si posición X es menor que valor dado, fijar posición X
@@ -64,6 +62,81 @@
 3. Agregar comentarios al código
 
 <img width="1712" height="900" alt="image" src="https://github.com/user-attachments/assets/201a2b5d-e84d-481c-9007-31a1e96c6947" />
-
 <img width="1919" height="1019" alt="image" src="https://github.com/user-attachments/assets/e0e4365e-0d1e-49c2-8ff0-9ae5d83fed17" />
+
+
+# Lección 2.2: Comida voladora
+##  SECCIONES DE LA LECCIÓN
+
+#### **1. ¿Cómo hacer que el proyectil vuele hacia adelante?**
+1. Crear nuevo Script llamado "MoveForward"
+2. Adjuntar script al objeto Food
+3. Definir `public float speed;` como variable
+4. En Update(): `transform.Translate(Vector3.forward * Time.deltaTime * speed);`
+5. Guardar y establecer variable speed en Inspector
+6. Probar funcionamiento
+<img width="1711" height="926" alt="image" src="https://github.com/user-attachments/assets/39da7439-762d-4e21-ba9c-2cce38605108" />
+<img width="1919" height="1006" alt="image" src="https://github.com/user-attachments/assets/c3101947-9726-4a41-b056-35a4072242c8" />
+
+
+#### **2. ¿Cómo convertir el proyectil en un Prefab?**
+1. Crear carpeta "Prefabs" en Project
+2. Arrastrar comida y seleccionar "Original Prefab"
+3. En PlayerController.cs: definir `public GameObject projectilePrefab;`
+4. Seleccionar jugador en Hierarchy
+5. Arrastrar prefab de proyectil a "Projectile Prefab" en Inspector
+6. Probar arrastrando proyectil a escena durante ejecución
+
+   <img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/eb50a42e-fd65-4838-b42f-e7deaf2d16cb" />
+<img width="1707" height="911" alt="image" src="https://github.com/user-attachments/assets/f8cb4a1d-77e4-4b5a-84e2-60b264de1528" />
+
+
+#### **3. ¿Cómo probar la pulsación de la barra espaciadora?**
+1. En PlayerController.cs, en Update():
+2. Agregar condicional: `if (Input.GetKeyDown(KeyCode.Space)) {`
+3. Dentro del condicional: `// Launch a projectile from the player`
+
+<img width="1713" height="912" alt="image" src="https://github.com/user-attachments/assets/3762ef7c-54ba-4756-98e9-d91374e1a95d" />
+
+
+#### **4. ¿Cómo lanzar un proyectil cuando se pulsa la barra espaciadora?**
+1. En el condicional del espacio:
+2. Usar `Instantiate()` para generar proyectil
+3. Especificar posición del jugador y rotación del prefab
+
+<img width="1720" height="900" alt="image" src="https://github.com/user-attachments/assets/667e6825-94dc-471e-969d-168a30e121a5" />
+<img width="1919" height="1027" alt="image" src="https://github.com/user-attachments/assets/e2031a82-4e50-4681-8277-b2713e687521" />
+
+
+
+#### **5. ¿Cómo convertir los animales en Prefabs?**
+1. Rotar todos los animales 180 grados en eje Y
+2. Seleccionar los tres animales en Hierarchy
+3. Agregar componente "Move Forward"
+4. Editar valores speed y probar
+5. Arrastrar animales a carpeta Prefabs como "Original Prefab"
+6. Probar arrastrando prefabs a escena durante juego
+
+<img width="1919" height="1026" alt="image" src="https://github.com/user-attachments/assets/a7ccff2c-c46b-4cc4-8931-8284c62a4b1e" />
+<img width="1919" height="1061" alt="image" src="https://github.com/user-attachments/assets/f29e030d-19fc-457e-9830-e5624491a33d" />
+<img width="1919" height="1048" alt="image" src="https://github.com/user-attachments/assets/9be2eef6-7275-4862-9a50-77c4dc78b698" />
+
+
+
+
+#### **6. ¿Cómo destruir los proyectiles fuera de la pantalla?**
+1. Crear Script "DestroyOutOfBounds"
+2. Aplicar script al proyectil
+3. Agregar `private float topBound = 30;`
+4. Escribir código: `if (transform.position.z > topBound) { Destroy(gameObject); }`
+5. En Inspector, usar "Overrides" → "Apply all" para aplicar al Prefab
+
+<img width="1919" height="1012" alt="image" src="https://github.com/user-attachments/assets/6ad32b0c-4508-40bf-96f5-fa2ad08f00aa" />
+<img width="1706" height="915" alt="image" src="https://github.com/user-attachments/assets/789cb6ac-8182-46a4-babc-6879a9c3e733" />
+
+
+#### **7. ¿Cómo destruir los animales fuera de la pantalla?**
+1. Crear condicional `else if` para verificar `lowerBound`
+2. Aplicar script a todos los animales
+3. Usar "Override" en los Prefabs de animales
 
