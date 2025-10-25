@@ -6,11 +6,13 @@
 
 # UNIDAD 3: SONIDOS Y EFECTOS - ÍNDICE
 
+# UNIDAD 3: SONIDOS Y EFECTOS - ÍNDICE
+
 ## 📑 ÍNDICE DE NAVEGACIÓN
 
 ### [INFORMACIÓN GENERAL](#información-general)
 
-### [Lección 3.1: Fuerza de salto](#lección-31-fuerza-de-salto)
+### [LECCIÓN 3.1: FUERZA DE SALTO](#lección-31-fuerza-de-salto)
 - [1. ¿Cómo abrir el prototipo y cambiar el fondo?](#1-cómo-abrir-el-prototipo-y-cambiar-el-fondo)
 - [2. ¿Cómo elegir y configurar un personaje jugador?](#2-cómo-elegir-y-configurar-un-personaje-jugador)
 - [3. ¿Cómo hacer que el jugador salte al inicio?](#3-cómo-hacer-que-el-jugador-salte-al-inicio)
@@ -21,7 +23,7 @@
 - [8. ¿Cómo crear un Spawn Manager?](#8-cómo-crear-un-spawn-manager)
 - [9. ¿Cómo generar obstáculos a intervalos?](#9-cómo-generar-obstáculos-a-intervalos)
 
-### [Lección 3.2: Haz que el mundo pase volando](#lección-32-haz-que-el-mundo-pase-volando)
+### [LECCIÓN 3.2: HAZ QUE EL MUNDO PASE VOLANDO](#lección-32-haz-que-el-mundo-pase-volando)
 - [1. ¿Cómo crear un script para repetir el fondo?](#1-cómo-crear-un-script-para-repetir-el-fondo)
 - [2. ¿Cómo restablecer la posición del Background?](#2-cómo-restablecer-la-posición-del-background)
 - [3. ¿Cómo corregir la repetición del fondo con colisionador?](#3-cómo-corregir-la-repetición-del-fondo-con-colisionador)
@@ -30,7 +32,7 @@
 - [6. ¿Cómo detener la generación de obstáculos durante el gameOver?](#6-cómo-detener-la-generación-de-obstáculos-durante-el-gameover)
 - [7. ¿Cómo destruir los obstáculos que sobrepasen los límites?](#7-cómo-destruir-los-obstáculos-que-sobrepasen-los-límites)
 
-### [Lección 3.3: No te quedes ahí sin hacer nada](#lección-33-no-te-quedes-ahí-sin-hacer-nada)
+### [LECCIÓN 3.3: NO TE QUEDES AHÍ SIN HACER NADA](#lección-33-no-te-quedes-ahí-sin-hacer-nada)
 - [1. ¿Cómo explorar las animaciones del jugador?](#1-cómo-explorar-las-animaciones-del-jugador)
 - [2. ¿Cómo hacer que el jugador comience corriendo?](#2-cómo-hacer-que-el-jugador-comience-corriendo)
 - [3. ¿Cómo configurar una animación de salto?](#3-cómo-configurar-una-animación-de-salto)
@@ -38,7 +40,7 @@
 - [5. ¿Cómo configurar una animación de caída?](#5-cómo-configurar-una-animación-de-caída)
 - [6. ¿Cómo evitar que el jugador salte mientras está inconsciente?](#6-cómo-evitar-que-el-jugador-salte-mientras-está-inconsciente)
 
-### [Lección 3.4: Efectos de sonido y partículas](#lección-34-efectos-de-sonido-y-partículas)
+### [LECCIÓN 3.4: EFECTOS DE SONIDO Y PARTÍCULAS](#lección-34-efectos-de-sonido-y-partículas)
 - [1. ¿Cómo personalizar una partícula de explosión?](#1-cómo-personalizar-una-partícula-de-explosión)
 - [2. ¿Cómo reproducir la partícula al momento de la colisión?](#2-cómo-reproducir-la-partícula-al-momento-de-la-colisión)
 - [3. ¿Cómo agregar una partícula de salpicadura de polvo?](#3-cómo-agregar-una-partícula-de-salpicadura-de-polvo)
@@ -48,7 +50,7 @@
 
 ### [VIDEO](#video)
 
-
+---
 ## Lección 3.1: Fuerza de salto
 
 ###  SECCIONES DE LA LECCIÓN
