@@ -6,8 +6,6 @@
 
 # UNIDAD 3: SONIDOS Y EFECTOS - ÍNDICE
 
-# UNIDAD 3: SONIDOS Y EFECTOS - ÍNDICE
-
 ## 📑 ÍNDICE DE NAVEGACIÓN
 
 ### [INFORMACIÓN GENERAL](#información-general)
@@ -301,7 +299,6 @@
 <img width="1919" height="1025" alt="image" src="https://github.com/user-attachments/assets/71065673-f479-4e29-8064-506b36cb68eb" />
 
 # VIDEO 
-
 
 https://github.com/user-attachments/assets/ceae5f60-dfcb-426f-87aa-7d6e3bc34f6e
 
