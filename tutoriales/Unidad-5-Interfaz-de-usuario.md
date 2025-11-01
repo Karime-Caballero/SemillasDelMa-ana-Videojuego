@@ -162,6 +162,152 @@
    <img width="1919" height="1008" alt="image" src="https://github.com/user-attachments/assets/994a4d03-5697-4dcb-b42a-545d82257100" />
 
 
+## Lección 5.3: Game Over
+
+### SECCIONES DE LA LECCIÓN
+
+#### **1. ¿Cómo crear un objeto de texto de Game Over?**
+1. Clic derecho en Canvas: `UI > TextMeshPro - Text`
+2. Renombrar como "Game Over Text"
+3. En Inspector: editar Text, Pos X, Pos Y, Font Asset, Size, Style, Color y Alignment
+4. Configurar "Wrapping" a "Disabled"
+
+   
+<img width="1919" height="1013" alt="Captura de pantalla 2025-10-31 232934" src="https://github.com/user-attachments/assets/c8002e7f-c743-472d-a6a3-23fd17b78e6c" />
+
+#### **2. ¿Cómo hacer que aparezca el texto de GameOver?**
+1. En GameManager.cs: crear `public TextMeshProUGUI gameOverText;`
+2. Asignar objeto Game Over en Inspector
+3. Desmarcar casilla "Active" para desactivar texto por defecto
+4. En Start(): activar texto temporalmente para pruebas
+<img width="1919" height="986" alt="Captura de pantalla 2025-10-31 234014" src="https://github.com/user-attachments/assets/c3f48c87-6589-49d4-8c49-0f307d46563d" />
+<img width="1918" height="1015" alt="Captura de pantalla 2025-10-31 234031" src="https://github.com/user-attachments/assets/6dbc5471-00d4-4167-8c4e-400a49c8ff9e" />
+
+#### **3. ¿Cómo crear la función GameOver?**
+1. Crear función `public void GameOver()`
+2. Mover código de activación de texto a esta función
+3. En Target.cs: llamar `gameManager.GameOver()` en OnTriggerEnter()
+4. Agregar etiqueta "Bad" al objeto malo
+5. Agregar condición para solo Game Over si NO es objeto malo
+<img width="1918" height="990" alt="image" src="https://github.com/user-attachments/assets/b9a15645-492f-4ab8-85c4-d43cf536ce66" />
+<img width="1919" height="986" alt="image" src="https://github.com/user-attachments/assets/548df423-460e-448d-82f5-54086f07a782" />
+
+
+#### **4. ¿Cómo detener la generación de obstáculos y el puntaje durante un GameOver?**
+1. Crear `public bool isGameActive;`
+2. En Start(): `isGameActive = true;`
+3. En GameOver(): `isGameActive = false;`
+4. En corrutina SpawnTarget(): cambiar `while (true)` a `while (isGameActive)`
+5. En Target.cs OnMouseDown(): agregar `if (gameManager.isGameActive)`
+<img width="1899" height="958" alt="image" src="https://github.com/user-attachments/assets/b2048b79-ad0d-409f-a481-b0a11851f335" />
+
+
+
+#### **5. ¿Cómo agregar un botón Reiniciar?**
+1. Clic derecho en Canvas: `Create > UI > Button`
+2. Renombrar botón como "Restart Button"
+3. Temporalmente reactivar texto Game Over para posicionar botón
+4. Seleccionar objeto hijo Text y editar para que diga "Restart"
+5. Configurar Font, Style y Size del texto
+
+   <img width="1919" height="1022" alt="image" src="https://github.com/user-attachments/assets/b91affbe-9927-4f13-bb69-014d269ee5d6" />
+
+
+#### **6. ¿Cómo hacer que funcione el botón de reinicio?**
+1. En GameManager.cs: agregar `using UnityEngine.SceneManagement;`
+2. Crear función `public void RestartGame()`
+3. En función: `SceneManager.LoadScene(SceneManager.GetActiveScene().name);`
+4. En Inspector del botón: agregar nuevo evento On Click
+5. Arrastrar Game Manager y seleccionar `GameManager.RestartGame`
+<img width="1919" height="1018" alt="image" src="https://github.com/user-attachments/assets/43647412-ae17-4396-8162-ba5e55d201d0" />
+
+#### **7. ¿Cómo mostrar el botón de reinicio durante el fin del juego?**
+1. En GameManager.cs: agregar `using UnityEngine.UI;`
+2. Declarar `public Button restartButton;`
+3. Asignar Restart Button en Inspector
+4. Desmarcar casilla "Active" para Restart Button
+5. En función GameOver(): activar Restart Button
+<img width="1917" height="995" alt="image" src="https://github.com/user-attachments/assets/55963b17-1277-4019-94f9-021ef21a2442" />
+
+# UNIDAD 5: INTERFAZ DE USUARIO
+
+## INFORMACIÓN GENERAL
+- **Ubicación:** `tutoriales/unidad-5-Interfaz-de-usuario.md`
+- **Objetivo:** Implementar sistema de menú y selección de dificultad
+
+## Lección 5.4: ¿Cuál es la dificultad?
+
+### SECCIONES DE LA LECCIÓN
+
+#### **1. ¿Cómo crear el texto del título y los botones del menú?**
+1. Duplicar texto "Game Over" para crear "Title Text"
+2. Editar nombre, texto y atributos del título
+3. Duplicar "Restart Button" para crear botón "Easy"
+4. Editar y duplicar para crear botones "Medium" y "Hard"
+<img width="1919" height="992" alt="image" src="https://github.com/user-attachments/assets/c56ce2c9-949a-4e59-ac97-3fd2741d670c" />
+<img width="1917" height="1019" alt="image" src="https://github.com/user-attachments/assets/40587d38-8d95-4736-98f8-bb41a2bc42eb" />
+
+
+#### **2. ¿Cómo agregar un Script DifficultyButton?**
+1. En los 3 botones: eliminar funcionalidad RestartGame de On Click
+2. Crear nuevo script "DifficultyButton.cs"
+3. Adjuntar script a los 3 botones
+4. Agregar `using UnityEngine.UI`
+5. Crear `private Button button;` e inicializar en Start()
+
+   <img width="1913" height="1017" alt="image" src="https://github.com/user-attachments/assets/b0954cd0-8259-4b20-92b8-c435e6565414" />
+<img width="1919" height="724" alt="image" src="https://github.com/user-attachments/assets/cd681e09-c334-4e71-a061-bb74a56c8c4e" />
+
+
+#### **3. ¿Cómo llamar SetDifficulty al hacer clic en el botón?**
+1. Crear función `void SetDifficulty()`
+2. Dentro: `Debug.Log(gameObject.name + " was clicked");`
+3. Agregar listener del botón para llamar SetDifficulty
+
+<img width="1911" height="845" alt="image" src="https://github.com/user-attachments/assets/2a94603d-8e00-4bd2-8d46-400aaed00210" />
+<img width="1919" height="1017" alt="image" src="https://github.com/user-attachments/assets/ecec15eb-f877-44c5-a83d-bffa57a68fc3" />
+
+#### **4. ¿Cómo hacer que tus botones inicien el juego?**
+1. En GameManager.cs: crear `public void StartGame()`
+2. Mover contenido de Start() a StartGame()
+3. En DifficultyButton.cs: crear `private GameManager gameManager;`
+4. Inicializar en Start()
+5. En SetDifficulty(): llamar `gameManager.StartGame()`
+
+<img width="1918" height="915" alt="image" src="https://github.com/user-attachments/assets/0d92ebb2-ede6-4fe1-b08a-978cb9412fcd" />
+
+<img width="1919" height="1019" alt="image" src="https://github.com/user-attachments/assets/2a0a712d-34d8-40a6-9c65-ddafaaf93e0a" />
+
+#### **5. ¿Cómo desactivar la pantalla del título al iniciar el juego?**
+1. Crear Empty Object "Title Screen" en Canvas
+2. Arrastrar 3 botones y título a Title Screen
+3. En GameManager.cs: crear `public GameObject titleScreen;`
+4. Asignar en Inspector
+5. En StartGame(): desactivar `titleScreen`
+
+   <img width="1914" height="1024" alt="image" src="https://github.com/user-attachments/assets/40411c43-619d-4480-bc2f-66bdb0c7ef3e" />
+<img width="1919" height="1009" alt="image" src="https://github.com/user-attachments/assets/e1da3cfc-df6a-4428-8aa5-9c76501df1d2" />
+
+
+#### **6. ¿Cómo utilizar un parámetro para cambiar la dificultad?**
+1. En DifficultyButton.cs: crear `public int difficulty;`
+2. En Inspector: asignar Easy=1, Medium=2, Hard=3
+3. Agregar parámetro `int difficulty` a StartGame()
+4. En StartGame(): `spawnRate /= difficulty;`
+5. En SetDifficulty(): pasar `difficulty` a StartGame()
+
+<img width="1914" height="884" alt="image" src="https://github.com/user-attachments/assets/ca9c0b68-0702-4599-b2b9-7f01296c7089" />
+<img width="1844" height="949" alt="image" src="https://github.com/user-attachments/assets/64a0e9a6-f7b4-4814-8697-fe67fb093e33" />
+<img width="1919" height="974" alt="image" src="https://github.com/user-attachments/assets/f2ee1887-f48c-47f0-82ce-a4d95ca5787e" />
+
+---
+# VIDEO 
+
+
+https://github.com/user-attachments/assets/e36a322f-682b-457b-bcce-76d4a2b28c61
+
+
+*✅ UNIDAD 5 COMPLETAMENTE FINALIZADA - JUEGO COMPLETO CON INTERFAZ DE USUARIO* 🎮🖥️
 
 ## 🔗 NAVEGACIÓN
 - [📋 Volver al README Principal](../README.md)
