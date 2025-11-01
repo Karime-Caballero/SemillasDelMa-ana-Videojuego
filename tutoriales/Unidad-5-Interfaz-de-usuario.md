@@ -307,12 +307,10 @@
 https://github.com/user-attachments/assets/e36a322f-682b-457b-bcce-76d4a2b28c61
 
 
-*✅ UNIDAD 5 COMPLETAMENTE FINALIZADA - JUEGO COMPLETO CON INTERFAZ DE USUARIO* 🎮🖥️
+* UNIDAD 5 COMPLETAMENTE FINALIZADA - JUEGO COMPLETO CON INTERFAZ DE USUARIO* 
 
 ## 🔗 NAVEGACIÓN
-- [📋 Volver al README Principal](../README.md)
-- [⬅️ Lección Anterior: Sonidos y Efectos](../unidad-3-Sonidos-y-efectos.md)
+- [ Volver al README Principal](../README.md)
+- [ Lección Anterior: Sonidos y Efectos](../unidad-3-Sonido-y-efectos.md)
 
----
 
-*🔄 Unidad 5 en progreso - Sistema de destrucción por clic implementado* 
