@@ -311,6 +311,6 @@ https://github.com/user-attachments/assets/e36a322f-682b-457b-bcce-76d4a2b28c61
 
 ## 🔗 NAVEGACIÓN
 - [ Volver al README Principal](../README.md)
-- [ Lección Anterior: Sonidos y Efectos](../unidad-3-Sonido-y-efectos.md)
+- [ Lección Anterior: Sonidos y Efectos](../Unidad-3-Sonido-y-efectos.md)
 
 
