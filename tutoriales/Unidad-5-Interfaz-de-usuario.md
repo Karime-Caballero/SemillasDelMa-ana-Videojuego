@@ -126,12 +126,21 @@
 4. En UpdateScore(): `score += scoreToAdd;`
 5. Llamar `UpdateScore(5)` en SpawnTarget() (temporal)
 
+ <img width="1919" height="999" alt="image" src="https://github.com/user-attachments/assets/0ade129f-07a6-4349-87b4-6a9195032c1f" />
+
+<img width="1919" height="972" alt="image" src="https://github.com/user-attachments/assets/5e267453-7224-479a-9a2c-2276390760db" />
+
 #### **5. ¿Cómo agregar puntos cuando se destruyen los objetivos?**
 1. En GameManager.cs: cambiar UpdateScore a `public`
 2. En Target.cs: crear `private GameManager gameManager;`
 3. En Start(): inicializar `gameManager = FindObjectOfType<GameManager>();`
 4. En OnMouseDown(): llamar `gameManager.UpdateScore(pointValue);`
 5. Eliminar llamada a UpdateScore en SpawnTarget()
+
+<img width="1919" height="1022" alt="image" src="https://github.com/user-attachments/assets/a5abe06a-613a-410d-9aaa-5186f20c356d" />
+<img width="1886" height="776" alt="image" src="https://github.com/user-attachments/assets/2cd520f0-bc07-4b9a-a4b4-9b9225ae5c28" />
+<img width="1917" height="920" alt="image" src="https://github.com/user-attachments/assets/f15a8468-20d5-4d30-85d1-3d92d8cc2df3" />
+
 
 #### **6. ¿Cómo agregar un valor de puntos a cada objetivo?**
 1. En Target.cs: crear `public int pointValue;`
@@ -140,10 +149,18 @@
    - Objetivo malo: valor negativo
 3. En OnMouseDown(): usar `gameManager.UpdateScore(pointValue);`
 
+   <img width="1919" height="1022" alt="image" src="https://github.com/user-attachments/assets/47e8aa8c-0b0d-47a6-8fe7-a11c39e2b268" />
+   <img width="1914" height="984" alt="image" src="https://github.com/user-attachments/assets/e4ff8199-6f3c-43ea-a96f-641d248016e8" />
+
+
+
 #### **7. ¿Cómo agregar una partícula de explosión?**
 1. En Target.cs: agregar `public ParticleSystem explosionParticle;`
 2. En cada Target Prefab: asignar prefab de partículas desde Course Library > Particles
 3. En OnMouseDown(): instanciar nuevo prefab de explosión
+
+   <img width="1919" height="1008" alt="image" src="https://github.com/user-attachments/assets/994a4d03-5697-4dcb-b42a-545d82257100" />
+
 
 
 ## 🔗 NAVEGACIÓN
