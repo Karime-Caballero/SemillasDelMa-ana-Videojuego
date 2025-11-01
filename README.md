@@ -27,7 +27,7 @@ El estudiante practicará los fundamentos de videojuegos en 3D con Unity.
 | **Lección 1** | Completado | El Control del Jugador |  [ `tutoriales/Leccion-1-Control-Jugador/`](tutoriales/Leccion-1-Control-Jugador/) | 10/10/2025 10:39|
 | **Lección 2** | Completado | Jugabilidad Básica  | [ `tutoriales/unidad-2-Jugabilidad-basica.md`](tutoriales/unidad-2-Jugabilidad-basica.md) | 17/10/2025 11:35|
 | **Lección 3** | Completado | Sonidos y Efectos | [`tutoriales/Unidad-3-Sonido-y-efectos.md`](tutoriales/Unidad-3-Sonido-y-efectos.md) | 24/10/2025 11:00|
-| **Lección 4** | Completado | Interfaz de Usuario | [`tutoriales/Unidad-4-Mecanicas-de-jugabilidad.md`](tutoriales/Unidad-4-Mecanicas-de-jugabilidad.md) |
+| **Lección 4** | Completado | Interfaz de Usuario | [`tutoriales/Unidad-5-Interfaz-de-usuario.md`](tutoriales/Unidad-5-Interfaz-de-usuario.md) | 31/10/2025 6:35|
 
 
 
