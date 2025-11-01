@@ -62,6 +62,9 @@
 3. Declarar `public List<GameObject> targets;`
 4. En Inspector: cambiar Size de lista a 4
 5. Asignar Prefabs a la lista
+<img width="1919" height="935" alt="image" src="https://github.com/user-attachments/assets/8e66814c-bd0e-4f5d-a219-dc3bdd79f86f" />
+<img width="1913" height="1016" alt="image" src="https://github.com/user-attachments/assets/59918505-e824-4548-9e1f-ec6146d4ff82" />
+
 
 #### **6. ¿Cómo crear una corrutina para generar objetos?**
 1. Declarar `private float spawnRate;`
@@ -70,29 +73,78 @@
 4. Generar índice aleatorio y objetivo aleatorio
 5. En Start(): usar `StartCoroutine()` para comenzar generación
 
+   <img width="1915" height="966" alt="image" src="https://github.com/user-attachments/assets/e2963a7b-2e7f-4535-99ea-9a69062abed8" />
+   <img width="1913" height="1011" alt="image" src="https://github.com/user-attachments/assets/58521ddb-09de-489b-9220-1213a1cf83d5" />
+
+
+
 #### **7. ¿Cómo destruir objetivos con clics y sensores?**
 1. En Target.cs: agregar método `private void OnMouseDown() { Destroy(gameObject); }`
 2. Agregar método `private void OnTriggerEnter(Collider other) { Destroy(gameObject); }`
+<img width="1891" height="986" alt="image" src="https://github.com/user-attachments/assets/434c70f8-2833-4a2a-adb0-4f2e590e4793" />
 
 
-´´´´
-##  CONCEPTOS IMPLEMENTADOS
 
-### **Nuevas Funcionalidades:**
-- ✅ Sistema 2D completo
-- ✅ Objetivos buenos y malos diferenciados
-- ✅ Física aleatoria de lanzamiento
-- ✅ Generación continua por corrutinas
-- ✅ Destrucción por clic del mouse
-- ✅ Detección de salida de pantalla
+## Lección 5.2: ¿Cómo monitorizar el puntaje?
 
-### **Nuevos Conceptos:**
-- ✅ Vista 2D en Unity
-- ✅ Listas de GameObjects
-- ✅ Corrutinas para timing
-- ✅ OnMouseDown() para input
-- ✅ OnTriggerEnter() para detección
-- ✅ Física con torque aleatorio
+### SECCIONES DE LA LECCIÓN
+
+#### **1. ¿Cómo agregar la posición del texto del puntaje en la pantalla?**
+1. En Hierarchy: `Create > UI > TextMeshPro text`
+2. Si se solicita: hacer clic en "Import TMP Essentials"
+3. Renombrar nuevo objeto como "Score Text"
+4. Alejar para ver el canvas en vista de Escena
+5. Cambiar Anchor Point a esquina superior izquierda
+6. En Inspector: cambiar Pos X y Pos Y para esquina superior izquierda
+<img width="1919" height="990" alt="image" src="https://github.com/user-attachments/assets/1a3516bd-6231-45ac-954b-dd08189edf03" />
+
+   
+
+#### **2. ¿Cómo editar las propiedades de Score Text?**
+1. Cambiar texto a "Score:"
+2. Elegir Font Asset apropiado
+3. Configurar Style, Size y Vertex Color
+4. Asegurar buen contraste con el fondo
+
+   <img width="1919" height="969" alt="image" src="https://github.com/user-attachments/assets/d1e2549c-22f3-492a-806a-67f40a0d69c2" />
+
+
+#### **3. ¿Cómo inicializar la variable y el texto del puntaje?**
+1. En GameManager.cs: agregar `using TMPro;`
+2. Declarar `public TextMeshProUGUI scoreText;`
+3. Asignar variable en Inspector
+4. Crear `private int score;` e inicializar en Start(): `score = 0;`
+5. En Start(): `scoreText.text = "Score: " + score;`
+
+   <img width="1919" height="1003" alt="image" src="https://github.com/user-attachments/assets/f143782e-5172-4599-9e56-c0fa2c4c3e09" />
+
+
+#### **4. ¿Cómo crear un nuevo método UpdateScore?**
+1. Crear método `private void UpdateScore(int scoreToAdd)`
+2. Mover `scoreText.text = "Score: " + score;` al nuevo método
+3. Llamar `UpdateScore(0)` en Start()
+4. En UpdateScore(): `score += scoreToAdd;`
+5. Llamar `UpdateScore(5)` en SpawnTarget() (temporal)
+
+#### **5. ¿Cómo agregar puntos cuando se destruyen los objetivos?**
+1. En GameManager.cs: cambiar UpdateScore a `public`
+2. En Target.cs: crear `private GameManager gameManager;`
+3. En Start(): inicializar `gameManager = FindObjectOfType<GameManager>();`
+4. En OnMouseDown(): llamar `gameManager.UpdateScore(pointValue);`
+5. Eliminar llamada a UpdateScore en SpawnTarget()
+
+#### **6. ¿Cómo agregar un valor de puntos a cada objetivo?**
+1. En Target.cs: crear `public int pointValue;`
+2. En Inspector de cada Target Prefab: definir Point Value
+   - Objetivos buenos: valores positivos variados
+   - Objetivo malo: valor negativo
+3. En OnMouseDown(): usar `gameManager.UpdateScore(pointValue);`
+
+#### **7. ¿Cómo agregar una partícula de explosión?**
+1. En Target.cs: agregar `public ParticleSystem explosionParticle;`
+2. En cada Target Prefab: asignar prefab de partículas desde Course Library > Particles
+3. En OnMouseDown(): instanciar nuevo prefab de explosión
+
 
 ## 🔗 NAVEGACIÓN
 - [📋 Volver al README Principal](../README.md)
@@ -100,4 +152,4 @@
 
 ---
 
-*🔄 Unidad 5 en progreso - Sistema de destrucción por clic implementado* 🎯
+*🔄 Unidad 5 en progreso - Sistema de destrucción por clic implementado* 
