@@ -35,6 +35,18 @@ VIDEO NIVEL 1
 https://drive.google.com/file/d/1yDxTkdQmiVe0LfNws0opti-5nwJTCx4i/view?usp=sharing
 
 
+---
+
+## Ejecutables del Videojuego: *Semillas del Mañana*
+
+| Plataforma             | Estado                 | Enlace / Archivo Ejecutable                                                                                                                                      |
+| ---------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Windows**            | Ejecutable disponible  | [Descargar .exe](./ejecutables)                                                                                                    |
+| **Android**            | APK funcional          | [Descargar APK](./ejecutables)                                                                                                     |
+| **Web**                | Versión en línea       | [Descargar .zip(Link 1)](./ejecutables) <br> [Jugar en el navegador (Link 2)](https://karime-caballero.itch.io/semillas-del-maana) |
+| **Video demostración** | Vista previa del juego | [Ver video](https://luisgatovolador.itch.io/semillas-del-maana)                                                                   
+
+
 
 
 
